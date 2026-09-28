@@ -48,10 +48,25 @@
     "https://x.com/AnthropicAI/status/2102435703535939725",
     "https://x.com/AnthropicAI/status/2102824959827742916",
     "https://x.com/AnthropicAI/status/2102897863097545197",
-    "https://x.com/AnthropicAI/status/2103541577083719888"
+    "https://x.com/AnthropicAI/status/2103541577083719888",
+    "https://x.com/ClaudeDevs/status/2044868953206612154",
+    "https://x.com/ClaudeDevs/status/2047371123185287223",
+    "https://x.com/ClaudeDevs/status/2055347539923308703",
+    "https://x.com/ClaudeDevs/status/2061501787769893055",
+    "https://x.com/ClaudeDevs/status/2064464557951852643",
+    "https://x.com/ClaudeDevs/status/2065621176735646006",
+    "https://x.com/ClaudeDevs/status/2067802163498352929",
+    "https://x.com/ClaudeDevs/status/2068122937308426676",
+    "https://x.com/ClaudeDevs/status/2072429181565288665",
+    "https://x.com/ClaudeDevs/status/2075279141352706215",
+    "https://x.com/ClaudeDevs/status/2077603834453770467",
+    "https://x.com/ClaudeDevs/status/2094856679250919746",
+    "https://x.com/lydiahallie/status/2095967323412930677",
+    "https://x.com/ClaudeDevs/status/2102438800836489554"
   ],
   "initialized_sources": [
     "https://rss.app/feeds/v1.1/XK4AVmakb8wWCpsT.json",
-    "https://rss.app/feeds/v1.1/LCDXbqBi9MT55Ymc.json"
+    "https://rss.app/feeds/v1.1/LCDXbqBi9MT55Ymc.json",
+    "https://claude-resets.com/rss/resets.xml"
   ]
 }
