@@ -89,7 +89,10 @@ def fetch_rss(source):
 
     for item in root.iter("item"):  # RSS 2.0
         link = (item.findtext("link") or "").strip()
-        text = strip_html(item.findtext("description") or item.findtext("title") or "")
+        title = strip_html(item.findtext("title") or "")
+        text = strip_html(item.findtext("description") or "")
+        if title and title not in text:  # e.g. claude-resets.com: short title + summary
+            text = f"{title}\n{text}".strip()
         guid = (item.findtext("guid") or link).strip()
         posts.append({"id": canonical_link(guid), "link": canonical_link(link), "text": text})
 
@@ -204,7 +207,8 @@ def check_once(cfg, dry_run=False):
             state["seen"].append(post["id"])
             if first_run and not cfg.get("post_existing_on_first_run", False):
                 continue
-            if not any(p.search(post["text"]) for p in patterns):
+            # Sources that only contain resets (e.g. claude-resets.com) skip the keyword check.
+            if not source.get("all_posts_are_resets") and not any(p.search(post["text"]) for p in patterns):
                 continue
             msg = format_message(post, cfg)
             print(f"[match] {post['link']}")

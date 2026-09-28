@@ -15,8 +15,8 @@
   "link_style": "fxtwitter",
   "post_existing_on_first_run": false,
 
+  "_sources_help": "claude-resets.com is a free community tracker of resets announced by @ClaudeDevs and Claude Code team members. It already contains only resets, so the keyword check is skipped for it.",
   "sources": [
-    { "type": "rss", "label": "@claudeai",    "url": "https://rss.app/feeds/v1.1/XK4AVmakb8wWCpsT.json" },
-    { "type": "rss", "label": "@AnthropicAI", "url": "https://rss.app/feeds/v1.1/LCDXbqBi9MT55Ymc.json" }
+    { "type": "rss", "label": "claude-resets.com", "url": "https://claude-resets.com/rss/resets.xml", "all_posts_are_resets": true }
   ]
 }
