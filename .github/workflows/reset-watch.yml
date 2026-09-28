@@ -2,7 +2,7 @@ name: Claude Reset Watch
 
 on:
   schedule:
-    - cron: "*/15 * * * *"   # every 15 minutes (GitHub may run it a few minutes late)
+    - cron: "7,22,37,52 * * * *"   # every 15 minutes, off the busy :00/:15/:30/:45 marks
   workflow_dispatch:          # lets you run it by hand from the Actions tab
     inputs:
       test:
