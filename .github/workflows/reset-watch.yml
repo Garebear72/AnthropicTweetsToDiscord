@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "*/15 * * * *"   # every 15 minutes (GitHub may run it a few minutes late)
   workflow_dispatch:          # lets you run it by hand from the Actions tab
+    inputs:
+      test:
+        description: "Just send a test message to Discord"
+        type: boolean
+        default: false
 
 permissions:
   contents: write             # needed to save state.json back to the repo
@@ -17,9 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -27,7 +32,13 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
-        run: python reset_watcher.py
+          TEST_MODE: ${{ inputs.test }}
+        run: |
+          if [ "$TEST_MODE" = "true" ]; then
+            python reset_watcher.py --test
+          else
+            python reset_watcher.py
+          fi
 
       - name: Save state (remembers which posts were already seen)
         run: |
