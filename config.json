@@ -1,0 +1,22 @@
+{
+  "_webhook_help": "Leave empty when running on GitHub (it uses the DISCORD_WEBHOOK_URL secret). Paste it here only if running on your PC.",
+  "discord_webhook_url": "",
+
+  "_keywords_help": "Case-insensitive regexes. A post is forwarded if ANY of them matches.",
+  "keywords": [
+    "\\breset",
+    "\\brefresh(ed|ing)? (your |all |everyone'?s )?(usage|rate|weekly)? ?limits",
+    "limits? (have been|are|were) (restored|refreshed)"
+  ],
+
+  "_mention_help": "Optional ping, e.g. \"@everyone\" or \"<@&ROLE_ID>\". Leave empty for no ping.",
+  "mention": "",
+
+  "link_style": "fxtwitter",
+  "post_existing_on_first_run": false,
+
+  "sources": [
+    { "type": "rss", "label": "@claudeai",    "url": "https://rss.app/feeds/v1.1/XK4AVmakb8wWCpsT.json" },
+    { "type": "rss", "label": "@AnthropicAI", "url": "https://rss.app/feeds/v1.1/LCDXbqBi9MT55Ymc.json" }
+  ]
+}
